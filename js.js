@@ -68,7 +68,7 @@ if (Math.abs(num) > 999 || isNaN(num)) {
     if (num > 0) {
         if (num > 10 && num < 100) {
             console.log(`${num} - положительное двузначное число`);
-        } else if (num > 100 && num < 1000) {
+        } else if (num > 100 && num < 1000 || num === 100) {
             console.log(`${num} - положительное трехзначное число`)
         } else if (num < 10) {
             console.log(`${num} - положительное однозначное число`)
@@ -78,7 +78,7 @@ if (Math.abs(num) > 999 || isNaN(num)) {
     } else if (num < 0) {
         if (Math.abs(num) > 10 && Math.abs(num) < 100) {
             console.log(`${num} - отрицательное двузначное число`);
-        } else if (Math.abs(num) > 100 && Math.abs(num) < 1000) {
+        } else if (Math.abs(num) > 100 && Math.abs(num) < 1000  || num === -100) {
             console.log(`${num} - отрицательное трехзначное число`)
         } else if (Math.abs(num) < 10) {
             console.log(`${num} - отрицательное однозначное число`)
@@ -113,13 +113,15 @@ if (year <= 0 || isNaN(year)) {
     console.log('Некорректные данные');
 } else {
     if (year %4 === 0) {
-        console.log(`${year} - високосный год`)
-    } else {
         if (year %100 === 0 && year %400 !== 0) {
-            console.log(`${year} - не високосный год`)
+            console.log(`${year} - не високосный год`);
         } else {
-            console.log(`${year} - не високосный год`)
+            console.log(`${year} - високосный год`);
         }
+    } else {
+        console.log(`${year} - не високосный год`);
     }
 }
+
+
 
